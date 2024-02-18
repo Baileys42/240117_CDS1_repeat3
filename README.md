@@ -1,0 +1,61 @@
+
+# Experiment 18: CDS1 repeat \#2 (2 fr)
+
+**Purpose**: To perform another repeat of CDS1 refolding with a higher
+density. I think it worked better this time?
+
+**Major results and comments:**
+
+- Better density of molecules this time, managed to see a split peak
+  distribution for last timepoint.
+- Need to perform final third repeat to see whether this or the other
+  repeat is more true to what’s really going on.
+
+**Buffers used**:
+
+- 2x TROLOX buffer was made up in 2x refolding buffer (100 mM HEPES, 100
+  mM KCL, 10 mM MgCl<sub>2</sub>, 2 mM DTT, 0.05% T20 (pH 7.5)).
+- FlucCDS1 was unfolded by flowing in chemical denaturant (4 M GdHCl, 50
+  mM HEPES, 50 mM KCl, 5 mM MgCl<sub>2</sub>, 0.05% (v/v) T20)
+
+**Concentration of proteins and stock origin**:
+
+- 3 uM A8 (127 uM stock origin- Shannon)
+- 2 uM A2 (45 uM stock origin - Shannon)
+- 0.5 Hsp110 (36.9 uM stock origin - Nicola)
+- Fluc flowed on at 50 pM concentration for immobilisation.
+
+**Instrument/techniques/imaging settings:** 532 laser imaging exposure =
+0.2
+
+532 nm laser = 1.6 ND
+
+647 laser imaging exposure = 0.2
+
+647 nm laser = 1.0 ND
+
+**Setup and workflow:**
+
+- CDS1 was immobilised at 5 nM concentration to achieve a high enough
+  density for imaging. Could have pushed it up to 6 nM potentially,
+  still not amazing density of molecule count.
+
+**Data:**
+
+![](Hist.png)
+
+- Again I got a strange 70-bound state which doesn’t really appear to be
+  fully captured by the chaperones.
+- Interestingly I get a very prominent 0.6 peak at 36 minutes, but a
+  split peak at 60 minutes this time.
+
+The previous repeat for this mutant is shown below.
+
+![First real repeat of CDS1](Capture.PNG)
+
+- I think I’ll wait for the final repeat before starting to collate
+  data.
+- I also want to refold my sample for an hour with chaperones and then
+  flow out chaperones to see what state the fluc exists in following
+  refolding once chaperones are removed. Does it prefer the 0.6 or 0.8
+  conformation?
