@@ -11,16 +11,14 @@ import scipy.integrate as integrate
 from lmfit import models
 import Utilities.Data_analysis as uda
 
-output_folder = "Experiment_1-description/python_results"  ### modify for each experiment
+output_folder = "Experiment_1-CDS1_12min\python_results"  ### modify for each experiment
 thresh = 0.2
 xlim_min = 6
 xlim_max = 60
 
 data_from_exp = {
 'treatment1':f'{output_folder}/mean.csv',
-'treatment2':'Experiment_2-description/python_results/mean.csv',
-'treatment3':'Experiment_3-description/python_results/mean.csv',
-'treatment4':'Experiment_4-description/python_results/mean.csv',
+
 }
 
 colors_plot = {

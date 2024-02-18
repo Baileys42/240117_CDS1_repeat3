@@ -10,16 +10,19 @@ from scipy import optimize
 import scipy.integrate as integrate
 from lmfit import models
 
-output_folder = "Experiment_X-description/python_results"  ### modify for each experiment
+output_folder = "Experiment_1-CDS1_12min/python_results"  ### modify for each experiment
 thresh = 0.2
 
 #### the first item in the tuple will be the name that goes into the graph legend
 data_paths = {
-    "treatment_label_1":("figure_label", "data_directory_1/"),
-    "treatment_label_2":("figure_label", "data_directory_2/"),
-    "treatment_label_3":("figure_label", "data_directory_3/"),
-    "treatment_label_4":("figure_label", "data_directory_4/"),
-    "treatment_label_5":("figure_label", "data_directory_5/")
+    "CDS1_Nat":("CDS1_Nat", "Experiment_1-CDS1_12min/raw_data/230503_FlucCDS1_Native_123_allmol/"),
+    "MF":("MF", "Experiment_1-CDS1_12min/raw_data/230503_FlucCDS1_MF_123_allmol/"),
+    "70-bound":("70-bound", "Experiment_1-CDS1_12min/raw_data/240117_CDS!_7040_allmol/"),
+    "12min":("12min", "Experiment_1-CDS1_12min/raw_data/12min/"),
+    "24min":("24min", "Experiment_1-CDS1_12min/raw_data/24min/"),
+    "36min":("36min", "Experiment_1-CDS1_12min/raw_data/36min/"),
+    "48min":("48min", "Experiment_1-CDS1_12min/raw_data/48min/"),
+    "60min":("60min", "Experiment_1-CDS1_12min/raw_data/60min/"),
 }
 
 
@@ -95,7 +98,7 @@ def ridgeline_plot(df, dict_key, font, palette):
     g.savefig(f'{output_folder}/Histogram-ridgeline.svg', dpi = 600)
     plt.show()
 
-ridgeline_plot(compiled_df, dict_key, font, 'BuPu')
+ridgeline_plot(compiled_df, dict_key, font, 'crest')
 #################
 ################# Code to plot regular histogram
 #################
@@ -158,7 +161,7 @@ for (treatment, molecule), df in compiled_df.groupby(['treatment_name', 'molecul
     df['FRET_time_below_thresh'] = percent_below_thresh
     df = df.iloc[[0]]
     filt_df.append(df)
-filt_dfs = pd.concat(cook)
+filt_dfs = pd.concat(filt_df)
 
 
 
@@ -192,16 +195,13 @@ plot_time_below_thresh(filt_dfs, order_normal)
 ############ 
 
 timepoint = {
-f'{order_normal[0]}':6,
-f'{order_normal[1]}':12,
-f'{order_normal[2]}':18,
-f'{order_normal[3]}':24,
-f'{order_normal[4]}':30, 
+f'{order_normal[2]}':0,
+f'{order_normal[3]}':12,
+f'{order_normal[4]}':24,
 f'{order_normal[5]}':36,
-f'{order_normal[6]}':42,
-f'{order_normal[7]}':48,
-f'{order_normal[8]}':54,
-f'{order_normal[9]}':60,
+f'{order_normal[6]}':48, 
+f'{order_normal[7]}':60,
+
 
 }
 
@@ -219,3 +219,4 @@ def concat_df_fit_data(df, dict_to_organise):
     return test
 
 timepoint_df = concat_df_fit_data(filt_dfs, timepoint)
+print('end')
